@@ -69,7 +69,9 @@ The collected sensor information is transferred to a smartphone for processing a
 Normal
    or
 Risk
-### 4. working principal
+
+
+**### 4. working principal**
 
                     START
                       │
