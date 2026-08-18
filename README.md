@@ -1,110 +1,146 @@
-# Early-Detection-of-Sciatica-Using-Ensemble-Learning-Algorithms
-# Early Detection of Sciatica Using Ensemble Learning Algorithms
+# Early Detection of Sciatica using Ensemble Learning Algorithms
 
 ## 📌 Project Overview
 
-Sciatica can cause changes in walking patterns, balance, and foot-loading because of irritation or compression of the sciatic nerve. Early gait abnormalities can be difficult to identify through short clinical observations alone.
+This project focuses on the early detection of sciatica-related gait abnormalities using wearable sensors and machine learning techniques.
 
-This project proposes a **wearable, non-invasive system for early screening of sciatica-related gait abnormalities** using motion and plantar-pressure sensors combined with machine learning.
+The proposed system uses a belt-mounted IMU and shoe-mounted plantar-pressure sensors to collect gait data during natural walking. The collected sensor data is processed to extract gait-related features and classify normal and abnormal gait patterns.
 
-The system continuously collects gait data during natural walking and analyzes the data to classify gait patterns as **Normal** or **Risk**.
-
-> ⚠️ **Note:** This project is intended as an academic early-screening/research system and is not a replacement for professional medical diagnosis.
-
----
+The system aims to provide a compact, non-invasive approach for continuous monitoring and early screening of sciatica-related gait abnormalities.
 
 ## 🎯 Objectives
 
-- Develop a wearable system to measure lumbar motion and foot-loading during walking.
-- Collect motion data using MPU6050 IMU sensors.
-- Measure plantar pressure using Force Sensitive Resistors (FSRs).
-- Fuse IMU and pressure data to obtain meaningful gait features.
-- Apply machine-learning techniques to classify gait abnormalities.
-- Provide a compact and non-invasive alternative for gait monitoring.
-- Support real-time and offline analysis through mobile synchronization.
+* Develop a wearable system to measure lumbar motion and foot-loading during natural walking.
+* Collect gait data using IMU and plantar-pressure sensors.
+* Fuse motion and pressure data to extract gait features.
+* Use lightweight machine-learning models to classify gait segments as Normal or Risk.
+* Enable early identification of sciatica-related gait abnormalities.
+* Support continuous and non-invasive gait monitoring.
 
----
+## 🔬 Research Area
 
-## 🏗️ System Architecture
+* Early detection of sciatica-related gait and biomechanical abnormalities.
+* Wearable sensing technologies.
+* Machine learning for gait classification.
+* Continuous health monitoring.
+* Rehabilitation and mobility monitoring.
 
-The proposed system consists of three major sections:
+## 🛠️ System Components
 
-### 1. Belt Module
+### Belt Module
 
-The belt module monitors lumbar/trunk motion.
+The belt module uses:
 
-**Main components:**
+* ESP32 microcontroller
+* MPU6050 IMU sensors
+* 3.7 V 18650 Li-ion battery
+* TP4056 charging controller
+* MT3608 DC-DC boost converter
 
-- ESP32 microcontroller
-- Five MPU6050 IMU sensors
-- 18650 Li-ion battery
-- TP4056 charging module
-- MT3608 DC-DC boost converter
+The belt-mounted IMUs capture motion information around the waist region.
 
-The five MPU6050 sensors communicate with the ESP32 through the **I²C interface** and collect acceleration and angular-velocity data.
+### Shoe Module
 
-### 2. Shoe Modules
+The shoe module uses:
 
-Two shoe modules are used to monitor foot movement and plantar pressure.
+* ESP32 microcontroller
+* MPU6050 IMU
+* Force Sensitive Resistors (FSRs)
+* 10 kΩ voltage-divider networks
+* 3.7 V 18650 Li-ion battery
+* TP4056 charging controller
+* MT3608 DC-DC boost converter
 
-**Each shoe module contains:**
+The shoe module captures foot-level motion and plantar-pressure information.
 
-- ESP32 microcontroller
-- MPU6050 IMU
-- Two FSR sensors
-- 10 kΩ resistors
-- 18650 Li-ion battery
-- TP4056 charging module
-- MT3608 boost converter
+## ⚙️ Working Principle
 
-The FSR sensors generate analog signals related to plantar pressure, while the MPU6050 captures foot-level motion.
+1. Motion data is collected from the belt-mounted IMU sensors.
+2. Plantar-pressure data is collected from the shoe-mounted pressure sensors.
+3. Sensor signals are synchronized and filtered.
+4. Motion and pressure data are combined to represent gait dynamics.
+5. Relevant gait features are extracted.
+6. Machine-learning models classify gait patterns.
+7. The system generates a sciatica risk indication for early screening.
 
-### 3. Smartphone Application
+## 📊 Machine Learning
 
-The collected sensor information is transferred to a smartphone for processing and analysis.
+The project focuses on machine-learning-based classification of gait abnormalities.
 
-**Proposed output:**
+The presentation describes the use of ensemble learning and transformer-based feature extraction for analyzing sensor data and classifying normal and abnormal gait patterns.
+
+## 🔄 Project Workflow
 
 ```text
-Normal
-   or
-Risk
+Wearable Sensors
+       ↓
+Sensor Data Collection
+       ↓
+Signal Synchronization & Filtering
+       ↓
+Data Fusion
+       ↓
+Feature Extraction
+       ↓
+Machine Learning
+       ↓
+Gait Classification
+       ↓
+Risk Identification
+```
 
+## 📋 Project Scope
 
-**### 4. working principal**
+The project aims to design and implement a wearable multi-sensor system combining lumbar IMU and plantar-pressure sensing for gait analysis.
 
-                    START
-                      │
-                      ▼
-        Initialize ESP32 & Sensors
-                      │
-                      ▼
-             Collect Sensor Data
-                      │
-                      ▼
-          Filter & Preprocess Data
-                      │
-                      ▼
-            Synchronize Data
-                      │
-                      ▼
-             Sensor Data Fusion
-                      │
-                      ▼
-            Extract Gait Features
-                      │
-                      ▼
-          Machine Learning Model
-                      │
-                      ▼
-             Gait Classification
-                      │
-                ┌─────┴─────┐
-                │           │
-                ▼           ▼
-              NORMAL       RISK
-                │           │
-                └─────┬─────┘
-                      │
-                      ▼
-              Continue Monitoring
+The system is intended to extract temporal, symmetry, and pressure-based gait features and classify short gait segments as Normal or Risk.
+
+It also considers real-time and offline analysis through mobile synchronization and optional cloud processing.
+
+## 🔍 Research Gaps
+
+The project identifies the following research gaps:
+
+* MRI-based diagnosis can be costly and may identify sciatica after significant nerve irritation.
+* Wearable ML-based sciatica detection is still underexplored for real-world monitoring.
+* Limited public wearable gait datasets can affect model generalization.
+* Accessible early-screening tools for the general population are limited.
+
+## 📈 Expected Outcome
+
+The proposed system is intended to provide a non-invasive approach for monitoring gait dynamics and lumbar motion.
+
+Combining wearable sensor data with machine-learning models can help identify subtle gait changes associated with sciatica-related abnormalities and support early screening.
+
+## 👥 Project Team
+
+| Name                | Registration Number |
+| ------------------- | ------------------- |
+| Sylada Adithya      | 22L31A04G6          |
+| Tamada Kintan Varma | 23L35A0427          |
+| Yalla Harivamsi     | 22L31A04I1          |
+| Vechalapu Saikumar  | 23L35A0428          |
+
+### Project Guide
+
+**Dr. A. Sampath Dakshina Murthy**
+Associate Professor
+Department of ECE
+
+## 📂 Project Files
+
+* [Project Presentation](./Early_Detection_of_Sciatica_Project_Presentation.pptx)
+
+## 🏫 Project Information
+
+**Area:** Machine Learning
+**Batch:** C11
+**Department:** Electronics and Communication Engineering
+
+## 📚 References
+
+The project presentation includes references covering sciatica, gait analysis, wearable sensors, plantar-pressure analysis, and machine-learning approaches for biomedical signal processing.
+
+## ⚠️ Disclaimer
+
+This project is intended for academic and research purposes. The proposed system is designed for early screening and monitoring and should not be considered a replacement for professional medical diagnosis.
