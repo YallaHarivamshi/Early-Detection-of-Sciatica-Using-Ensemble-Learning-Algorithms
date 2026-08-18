@@ -114,12 +114,12 @@ Combining wearable sensor data with machine-learning models can help identify su
 
 ## 👥 Project Team
 
-| Name                | Registration Number |
-| ------------------- | ------------------- |
-| Sylada Adithya      | 22L31A04G6          |
-| Tamada Kintan Varma | 23L35A0427          |
-| Yalla Harivamsi     | 22L31A04I1          |
-| Vechalapu Saikumar  | 23L35A0428          |
+| Name                | 
+| ------------------- |
+| Sylada Adithya      | 
+| Tamada Kintan Varma | 
+| Yalla Harivamsi     | 
+| Vechalapu Saikumar  |         |
 
 ### Project Guide
 
