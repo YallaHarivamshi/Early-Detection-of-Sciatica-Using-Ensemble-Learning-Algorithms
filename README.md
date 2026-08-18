@@ -69,3 +69,40 @@ The collected sensor information is transferred to a smartphone for processing a
 Normal
    or
 Risk
+### 4. working principal
+
+                    START
+                      │
+                      ▼
+        Initialize ESP32 & Sensors
+                      │
+                      ▼
+             Collect Sensor Data
+                      │
+                      ▼
+          Filter & Preprocess Data
+                      │
+                      ▼
+            Synchronize Data
+                      │
+                      ▼
+             Sensor Data Fusion
+                      │
+                      ▼
+            Extract Gait Features
+                      │
+                      ▼
+          Machine Learning Model
+                      │
+                      ▼
+             Gait Classification
+                      │
+                ┌─────┴─────┐
+                │           │
+                ▼           ▼
+              NORMAL       RISK
+                │           │
+                └─────┬─────┘
+                      │
+                      ▼
+              Continue Monitoring
