@@ -1,4 +1,4 @@
-# Early-Detection-of-Sciatica-Using-Ensemble-Learning-AlgorithmsEarly Detection of Sciatica Using Ensemble Learning Algorithms
+# Early-Detection-of-Sciatica-Using-Ensemble-Learning-Algorithms
 # Early Detection of Sciatica Using Ensemble Learning Algorithms
 
 ## 📌 Project Overview
